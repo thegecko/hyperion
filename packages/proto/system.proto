@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service SystemService {
+    rpc Version (EmptyRequest) returns (VersionResponse);
+    rpc Time (TimeRequest) returns (stream TimeResponse);
+}
+
+message EmptyRequest {
+}
+
+message VersionResponse {
+    string version = 1;
+}
+
+message TimeRequest {
+    uint32 count = 1;
+}
+
+message TimeResponse {
+    string time = 1;
+}
