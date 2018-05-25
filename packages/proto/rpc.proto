@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Request {
+    uint32 id = 1;
+    string service = 2;
+    string method = 3;
+    bytes payload = 4;
+    bool end = 5;
+}
+
+message Response {
+    uint32 id = 1;
+    string error = 2;
+    bytes payload = 3;
+    bool end = 4;
+}
