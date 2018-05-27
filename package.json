@@ -1,0 +1,21 @@
+{
+  "name": "hyperion",
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "build": "lerna run build",
+    "build:server": "lerna run build:server",
+    "build:desktop": "lerna run build:desktop",
+    "watch": "lerna run --parallel watch",
+    "watch:server": "lerna run --parallel watch:server",
+    "watch:desktop": "lerna run --parallel watch:desktop",
+    "server": "lerna run --parallel server",
+    "desktop": "lerna run --parallel desktop",
+    "clean": "lerna run clean",
+    "clean:all": "lerna run clean && lerna clean --yes && rimraf node_modules"
+  },
+  "devDependencies": {
+    "lerna": "^2.8.0",
+    "rimraf": "^2.6.2"
+  }
+}
