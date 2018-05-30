@@ -70,7 +70,7 @@ gulp.task("compile", ["protobuf"], () => {
     .pipe(gulp.dest(bundleDir));
 });
 
-// Run browserSync watching for rebuilds
+// Watch for source changes and run browserSync watching for rebuilds
 gulp.task("watch", ["setWatch", "default"], () => {
     browserSync.init({
         port: 3003,

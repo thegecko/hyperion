@@ -62,16 +62,18 @@ gulp.task("compile", ["protobuf"], () => {
     .pipe(gulp.dest(distDir));
 });
 
-// Copy the built app
+// Copy the built UI
 gulp.task("copy", () => {
     return gulp.src(appSrc)
     .pipe(gulp.dest(appDir));
 });
 
+// Watch source files and restart electron as needed
 gulp.task("watch", ["setWatch", "develop"], () => {
     gulp.watch(srcFilesOnly, ["default", electron.rerun]);
 });
 
+// Build and launch electron
 gulp.task("develop", ["default"], () => {
     gulp.src(distDir)
     .pipe(electron(null, {

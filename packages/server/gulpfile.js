@@ -64,7 +64,7 @@ gulp.task("compile", ["protobuf"], () => {
     .pipe(gulp.dest(distDir));
 });
 
-// Copy the built app
+// Copy the built UI
 gulp.task("copy", () => {
     return gulp.src(appSrc)
     .pipe(gulp.dest(appDir));
